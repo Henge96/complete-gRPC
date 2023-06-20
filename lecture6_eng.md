@@ -122,7 +122,7 @@ Now we are all set to generate Go codes, I will create a new folder named `pb`
 to store the generated Go codes. Then run this command:
 
 ```shell
-protoc --proto_path=proto --go_out=pb proto/*.proto
+protoc --proto_path=proto --go_out=plugins=grpc:pb proto/*.proto
 ```
 
 Our proto file is located inside the `proto` folder, so we tell `protoc` to 
@@ -145,7 +145,7 @@ the run task to run the `main.go` file as well.
 
 ```makefile
 gen:
-	protoc --proto_path=proto --go_out=pb proto/*.proto
+	protoc --proto_path=proto --go_out=plugins=grpc:pb proto/*.proto
 clean:
 	rm pb/*.go
 run:
