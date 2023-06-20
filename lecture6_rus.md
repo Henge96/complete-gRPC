@@ -131,7 +131,7 @@ go get -u github.com/golang/protobuf/protoc-gen-go
 команду:
 
 ```shell
-protoc --proto_path=proto --go_out=pb proto/*.proto
+protoc --proto_path=proto --go_out=plugins=grpc:pb proto/*.proto
 ```
 
 Наш proto файл находится внутри папки `proto`, поэтому мы должны указать
@@ -156,7 +156,7 @@ gRPC для сериализации сообщения, но они нас не
 
 ```makefile
 gen:
-	protoc --proto_path=proto --go_out=pb proto/*.proto
+	protoc --proto_path=proto --go_out=plugins=grpc:pb proto/*.proto
 clean:
 	rm pb/*.go
 run:
